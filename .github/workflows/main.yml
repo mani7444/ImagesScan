@@ -21,8 +21,7 @@ jobs:
       with:
         java-version: '1.8.x'
         
-    - name: Build with Maven
-      run: mvn package --file pom.xml
+   
     - name: Build and Tag image
       run: |
         docker build -f ./Dockerfile -t ${{ secrets.ACR_LOGIN_SERVER }}/spring-petclinic:${{ github.run_number }} .
