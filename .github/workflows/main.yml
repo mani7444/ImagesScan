@@ -17,7 +17,7 @@ jobs:
     - uses: Azure/docker-login@v1
       with:
         login-server: containerscan25.azurecr.io
-        username: ${{ secrets.REGISTRY_USERNAME }}
+        username: ${{ secrets.REGISTRY_USERNAME }} 
         password: ${{ secrets.REGISTRY_PASSWORD }}
     
     - run: docker push containerscan25.azurecr.io/spring-petclinic:${{ github.sha }}      
