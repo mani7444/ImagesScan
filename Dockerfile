@@ -1,4 +1,8 @@
-FROM openjdk:11-jre-stretch
-ADD target/spring-petclinic-2.4.2.jar spring-petclinic-2.4.2.jar
-EXPOSE 8080
-ENTRYPOINT [ "java", "-jar", "spring-petclinic-2.4.2.jar" ]
+# syntax=docker/dockerfile:1
+   
+FROM node:18-alpine
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD ["node", "src/index.js"]
+EXPOSE 3000
