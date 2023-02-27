@@ -6,8 +6,8 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - run: docker build . -t containerscan25.azurecr.io/spring-petclinic:${{ github.sha }}  
-      
+    - run: docker build . -t containerscan25.azurecr.io/spring-petclinic:${{ github.sha }}   
+       
     - uses: Azure/container-scan@v0
       id: container-scan
       continue-on-error: true
